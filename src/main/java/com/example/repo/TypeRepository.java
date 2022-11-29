@@ -1,6 +1,7 @@
 package com.example.repo;
 
-import com.example.SensorMonitor.domain.Types;
+
+import com.example.models.Types;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
