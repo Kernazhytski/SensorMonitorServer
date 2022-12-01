@@ -65,8 +65,7 @@ public class TableController {
         probe.setLocation(probeRequest.getLocation());
         probe.setUnit(probeRequest.getUnit());
         probe.setType(probeRequest.getType());
-        probe.setDescription(probeRequest.getDescription());
-
+        probe.setDescription(probeRequest.getDescription());//
         probeRepository.save(probe);
     }
 
