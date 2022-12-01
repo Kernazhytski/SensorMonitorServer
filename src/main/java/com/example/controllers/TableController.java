@@ -54,6 +54,13 @@ public class TableController {
         return new ResponseEntity<>(listOfLists, HttpStatus.OK);
     }
 
+    @DeleteMapping("/table/delete/{id}")
+    @PreAuthorize("hasRole('ADMIN')")
+    public void deleteProbe(@PathVariable("id") int id){
+        Probe probe = probeRepository.findById(id).orElseThrow();
+        probeRepository.delete(probe);
+    }
+
     @PostMapping("/table/edit/{id}")
     @PreAuthorize("hasRole('ADMIN')")
     public void editingProbe(@PathVariable("id") int id,@RequestBody ProbeRequest probeRequest){
